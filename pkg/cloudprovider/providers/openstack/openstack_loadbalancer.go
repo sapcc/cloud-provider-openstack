@@ -1611,7 +1611,7 @@ func (lbaas *LbaasV2) UpdateLoadBalancer(ctx context.Context, clusterName string
 	}
 
 	name := lbaas.GetLoadBalancerName(ctx, clusterName, service)
-	legacyName := lbaas.GetLoadBalancerName(ctx, clusterName, service)
+	legacyName := lbaas.GetLoadBalancerLegacyName(ctx, clusterName, service)
 	loadbalancer, err := getLoadbalancerByName(lbaas.lb, name, legacyName)
 	if err != nil {
 		return err
